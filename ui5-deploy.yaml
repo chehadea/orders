@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: as.fi.orders
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          url: https://fd1-web.sap.asit.services
+          client: '010'
+        app:
+          name: ZK_AUFT_UI5A01
+          package: ZKWF_UI_ORDERS
+          transport: FD1K902166
+        exclude:
+          - /test/
