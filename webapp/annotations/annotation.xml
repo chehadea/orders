@@ -2,17 +2,36 @@
     <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
         <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
     </edmx:Reference>
-    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
-        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
-    </edmx:Reference>
-    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Communication.xml">
-        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
-    </edmx:Reference>
     <edmx:Reference Uri="/sap/opu/odata4/sap/zui_order_o4/srvd/sap/zui_orders/0001/$metadata">
         <edmx:Include Namespace="com.sap.gateway.srvd.zui_orders.v0001" Alias="SAP__self"/>
     </edmx:Reference>
     <edmx:DataServices>
         <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+            <Annotations Target="SAP__self.orderFromRef(SAP__self.ZC_ORDERSType)">
+                <Annotation Term="Common.SideEffects">
+                    <Record Type="Common.SideEffectsType">
+                        <PropertyValue Property="TargetProperties">
+                            <Collection>
+                                <String>_it/RefOrderNo</String>
+                                <String>_it/OrderType</String>
+                                <String>_it/Kurzbeschreibung</String>
+                                <String>_it/Beschreibung</String>
+                                <String>_it/StartDate</String>
+                                <String>_it/CostCenter</String>
+                                <String>_it/CompanyCode</String>
+                                <String>_it/Wahrungsschlussel</String>
+                                <String>_it/Verantwortlicher</String>
+                                <String>_it/ProfitCenter</String>
+                                <String>_it/Processinggroup</String>
+                                <String>_it/CostingSheet</String>
+                                <String>_it/ExternalOrderNo</String>
+                                <String>_it/hierarhcysasv</String>
+                                <String>_it/ControllingArea</String>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
         </Schema>
     </edmx:DataServices>
 </edmx:Edmx>
